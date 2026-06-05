@@ -1,7 +1,19 @@
 ---
 title: "Andres Romero-Bravo"
+subtitle: "Plant Evolutionary Biologist"
+image: images/profile_photo.jpg
+about:
+  template: jolla
+  links:
+    - icon: github
+      href: https://github.com/andresarb
+    - icon: envelope
+      href: mailto:andres.romero_bravo@biol.lu.se
+    - icon: linkedin
+      href: https://linkedin.com/in/aromerobravo
 ---
 
-This is a Quarto website.
+Welcome! I am a plant evolutionary biologist working on floral evolution, 
+plant–pollinator interactions, and adaptation to environmental change.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+[Learn more about me](about.qmd) · [My research](research.qmd) · [CV](cv.qmd)
