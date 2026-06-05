@@ -1,0 +1,42 @@
+---
+title: "Publications"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: true
+---
+
+```{r}
+#| results: asis
+library(scholar)
+library(dplyr)
+library(glue)
+
+pubs <- get_publications("6rW2FGoAAAAJ") |>
+  filter(!is.na(year), year > 2018, journal != "") |>
+  filter(!journal %in% c("University of Sussex", "")) |>
+  arrange(desc(year))
+
+dois <- c(
+  "Repeated polyploidization shapes divergence in floral morphology in Lithophragma bolanderi (Saxifragaceae)" = "https://doi.org/10.1073/pnas.2505119122",
+  "Greater Thermal Plasticity Toward Heterogeneous Range\u2010Edge Environments of Three Hypericum Species" = "https://doi.org/10.1002/ece3.73486",
+  "Nectar and floral morphology differ in evolutionary potential in novel pollination environments" = "https://doi.org/10.1111/nph.19780",
+  "The IDH-TAU-EGFR triad defines the neovascular landscape of diffuse gliomas" = "https://doi.org/10.1126/scitranslmed.aax1501"
+)
+
+years <- sort(unique(pubs$year), decreasing = TRUE)
+
+for (yr in years) {
+  cat(paste0("\n## ", yr, "\n\n"))
+  yr_pubs <- filter(pubs, year == yr)
+  for (i in seq_len(nrow(yr_pubs))) {
+    p <- yr_pubs[i, ]
+    authors <- gsub("A Romero-Bravo|A Romero\u2010Bravo", "**A Romero-Bravo**", p$author)
+    doi <- dois[p$title]
+    doi_link <- ifelse(!is.na(doi), glue(" [Read it]({doi})"), "")
+    cat(glue("{authors} ({yr}). {p$title}. *{p$journal}*, {p$number}. **Citations: {p$cites}**{doi_link}\n\n"))
+  }
+}
+```

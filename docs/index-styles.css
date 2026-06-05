@@ -1,0 +1,13 @@
+/* Center subtitle */
+.lead {
+  text-align: center;
+}
+
+/* Center icons in their boxes */
+.about-link i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

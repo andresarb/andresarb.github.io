@@ -7,13 +7,19 @@ about:
   links:
     - icon: github
       href: https://github.com/andresarb
+      target: _blank
     - icon: envelope
       href: mailto:andres.romero_bravo@biol.lu.se
     - icon: linkedin
       href: https://linkedin.com/in/aromerobravo
+      target: _blank
+    - icon: bluesky
+      href: https://bsky.app/profile/a-romerobravo.bsky.social
+      target: _blank
+css: index-styles.css
 ---
 
-Welcome! I am a plant evolutionary biologist working on floral evolution, 
+Hi! I am a plant evolutionary biologist working on floral evolution, 
 plant–pollinator interactions, and adaptation to environmental change.
 
 [Learn more about me](about.qmd) · [My research](research.qmd) · [CV](cv.qmd)

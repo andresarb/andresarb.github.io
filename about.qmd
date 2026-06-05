@@ -3,12 +3,19 @@ title: "Andres Romero-Bravo"
 subtitle: "Plant evolutionary ecologist | Lund University"
 image: images/profile_photo.jpg
 about:
-  template: jolla
+  template: trestles
   links:
     - icon: github
       href: https://github.com/andresarb
+      target: _blank
     - icon: envelope
       href: mailto:andres.romero_bravo@biol.lu.se
+    - icon: linkedin
+      href: https://linkedin.com/in/aromerobravo
+      target: _blank
+    - icon: bluesky
+      href: https://bsky.app/profile/a-romerobravo.bsky.social
+      target: _blank
 ---
 
 Hola! I am Andrés, a plant evolutionary biologist focused on floral evolution, plant–pollinator interactions, and the evolvability of flowering plants. I am interested in studying the ecological and evolutionary mechanisms that determine the responses of flowering plants to environmental change.
