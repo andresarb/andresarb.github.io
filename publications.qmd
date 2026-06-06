@@ -50,7 +50,7 @@ for (yr in years) {
     authors <- gsub("A Romero-Bravo|A Romero\u2010Bravo|Andrés Romero-Bravo|Andres Romero-Bravo", "**Andrés Romero-Bravo**", full_authors)
     doi <- dois[p$title]
     doi_link <- ifelse(!is.na(doi), paste0("  \n[Read it](", doi, ")"), "")
-    cat(glue("{authors} ({yr}). {p$title}. *{p$journal}*, {p$number}.  \n**Citations: {p$cites}**{doi_link}\n\n"))
+    cat(glue("{authors} ({yr}). {p$title}. *{p$journal}*, {p$number}. **Citations: {p$cites}**{doi_link}\n\n"))
   }
 }
 ```
