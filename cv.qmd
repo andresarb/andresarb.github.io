@@ -2,4 +2,56 @@
 title: "CV"
 ---
 
-Coming soon.
+## Education
+
+**PhD in Biology**  
+Plant Evolutionary Ecology Lab, University of Sussex, 2020–2025  
+*Thesis: Floral evolution, plasticity and adaptation under novel environments*
+
+**MSc in Biology — Plant Science**  
+Lund University, 2018–2020  
+*Thesis: Plant-insect interactions and the evolution of polyploidy in* Lithophragma bolanderi
+
+**Degree in Biology — Environmental Biology**  
+Universidad Complutense de Madrid, 2011–2015
+
+**Degree in Teaching in Primary Education**  
+Universidad Complutense de Madrid, 2008–2011
+
+---
+
+## Research Experience
+
+**Researcher — SPACE Group, Lund University** *(2025–present)*  
+Floral integration, evolvability, and pollinator-mediated selection across altitudinal gradients in high Andean ecosystems.
+
+**PhD Researcher — University of Sussex** *(2020–2025)*  
+Plasticity, evolvability and local adaptation of the flower phenotype under environmental and pollinator change.
+
+**Botanical Surveyor — UK Centre for Ecology & Hydrology** *(May–Sep 2025)*  
+Surveying of vascular plants and habitat mapping as part of the LandSpAES project.
+
+**Research Assistant — Carlos III Health Research Institute** *(2017–2018)*  
+Characterisation of brain tumours and identification of potential treatment targets.
+
+**Field Research Assistant — Torres del Paine National Park, Chile** *(2016–2017)*  
+Post-fire vegetation recovery monitoring in the Patagonian steppe.
+
+---
+
+## Teaching Experience
+
+**Doctoral Tutor — University of Sussex** *(2021–2025)*  
+
+- Introduction to Evolution and Biodiversity (18h)
+- Environmental Research Skills (79.2h)
+- Academic Skills in Life Sciences (22h)
+- Mediterranean Ecology Field Course (67.5h)
+- Tropical Rainforest Science Field Course (180.5h)
+
+---
+
+## Grants & Awards
+
+**Swedish Phytogeographical Society Research Scholarship** *(2026)*  
+*Floral integration and adaptation to changing environments in Andean alpine communities* — 40,000 SEK

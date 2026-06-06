@@ -1,13 +1,166 @@
-/* Center subtitle */
-.lead {
-  text-align: center;
+/* ── Override Quarto's default container width limits ── */
+body > div {
+  max-width: 100% !important;
 }
 
-/* Center icons in their boxes */
-.about-link i {
+div.container-fluid {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
+
+div[class*="container"] {
+  max-width: 100% !important;
+}
+
+.quarto-container {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+#quarto-content {
+  max-width: 100% !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+
+main {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* ── Prevent horizontal scrollbar from full-width elements ── */
+body {
+  overflow-x: hidden;
+}
+
+/* ── Wrapper for about and contact sections — controls their max width ── */
+.page-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1rem; /* reduced padding = wider content */
+}
+
+/* ── Full-width banner image ── */
+.banner {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%); /* breaks out of Quarto content column */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Banner image sizing and crop position ── */
+/* object-position: center X% — higher % = shows more of bottom */
+.banner img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center 83%;
+  display: block;
+}
+
+/* ── Text overlay on banner — sits at top with gradient behind it ── */
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 40px;
+  background: linear-gradient(rgba(0,0,0,0.5), transparent); /* dark at top, fades down */
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+.banner-overlay h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: white;
+}
+
+.banner-overlay p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: white;
+}
+
+/* ── About section — photo on left, text on right ── */
+.about-section {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/* ── Circular profile photo ── */
+.about-photo img {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.subtitle {
+  color: gray;
+  font-size: 1.1rem;
+}
+
+/* ── Social media icon links ── */
+.social-links a {
+  font-size: 1.5rem;
+  margin-right: 0.8rem;
+  color: inherit;
+}
+
+/* ── Slick image carousel wrapper ── */
+/* max-width controls how wide the carousel is */
+.slick-carousel-wrapper {
+  max-width: 1400px;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+/* ── Vertically centers images of different heights in the carousel ── */
+.slick-carousel .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Individual carousel images ── */
+/* height: fixed height for consistency; object-fit: cover fills without distortion */
+.slick-carousel img {
+  height: 400px;
   width: 100%;
-  height: 100%;
+  object-fit: cover;
+  padding: 0 10px;
+  border-radius: 8px;
+  cursor: pointer; /* shows pointer to indicate clickable */
+}
+
+/* ── Fullscreen lightbox overlay when clicking a carousel image ── */
+/* Click anywhere on the overlay to close it */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+  cursor: pointer;
+}
+
+/* ── The enlarged image inside the lightbox ── */
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+  margin: auto;
+  margin-top: 5vh;
+}
+
+/* ── Contact section ── */
+.contact-section {
+  margin-top: 3rem;
+  text-align: center;
 }

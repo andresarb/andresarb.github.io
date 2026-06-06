@@ -9,57 +9,85 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Andres Romero-Bravo",
+    "title": "Andres Romero Bravo",
     "section": "",
-    "text": "Hi! I am a plant evolutionary biologist working on floral evolution, plant–pollinator interactions, and adaptation to environmental change.\nLearn more about me · My research · CV"
+    "text": "Andres Romero Bravo\n    Plant Evolutionary Biologist\n  \n\n\n\n\n\n  \n    \n  \n  \n    Hi! I am a plant evolutionary biologist working on floral evolution,\n    plant–pollinator interactions, and plant adaptation to environmental change.\n    \n      More about me ·\n      My research ·\n      CV ·\n      Publications\n    \n    \n      \n      \n      \n      \n      \n      \n      \n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Contact\n  📧 andres.romero_bravo@biol.lu.se / aromerobravo@gmail.com\n  🏛️ Department of Biology, Lund University\n  Ecologihuset, Kontaktvägen 10, 22362 Lund, Sweden"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "Andres Romero-Bravo",
+    "title": "Andres Romero Bravo",
     "section": "",
-    "text": "Hola! I am Andrés, a plant evolutionary biologist focused on floral evolution, plant–pollinator interactions, and the evolvability of flowering plants. I am interested in studying the ecological and evolutionary mechanisms that determine the responses of flowering plants to environmental change.\nIn my research, I combine quantitative genetics, phenotypic plasticity, and field ecology to understand how reproductive and vegetative traits respond to changes in abiotic and biotic environments.\nI hold a PhD from the University of Sussex, where I investigated floral plasticity, evolvability, and local adaptation under novel pollination environments. My work combines common-garden, transplant, and resurrection experiments with genomic and multivariate statistical approaches.\nBeyond research, I am a co-founder and Secretary of Jóvenes por la Botánica Española (JxBE), a society for young botanists in Spain, where I am involved in the organisation of activities and events to promote botany among early-career researchers.\nI am also committed to environmental education and science communication, drawing on my background in primary education to bridge academia and the wider public. Since 2018, I run La naturaleza al detalle, a nature photography blog where I combine images and educational text to share my passion for the natural world with a broad audience."
+    "text": "Plant evolutionary ecologist\n    ¡Hola! I am Andrés. I am originally from Madrid (Spain), where I lived most of my life and started my higher education with a degree in Teaching and a degree in Biology. My academic career has taken me to live in places like Torres del Paine (Chile), Lund (Sweden), where I obtained a MSc in Plant Science, and Lewes (UK), where I studied my PhD. I have recently returned to Lund to continue my career as a postdoctoral researcher.\n    I am fascinated by floral evolution and plant–pollinator interactions and I study the ecological and evolutionary processes that affect the responses of flowering plants to environmental change. In my research, I combine quantitative genetics, phenotypic plasticity, and field and greenhouse experiments to understand how reproductive and vegetative traits respond to changes in abiotic and biotic environments.\n    I conducted my PhD at the University of Sussex, within the Plant Evolutionary Ecology Lab, investigating floral plasticity, evolvability, and local adaptation under novel pollination environments. My work here combined common-garden, transplant, and resurrection experiments with genomic and multivariate statistical analyses.\n    Beyond research, I am a co-founder and Secretary of Jóvenes por la Botánica Española (JxBE), a society for young botanists in Spain focused on connecting young people interested in plants and fighting plant blindness.\n    Growing up, and thanks to my parents, I developed an interest in exploring and studying nature. This soon grew into an ever-growing interest in mountaineering, nature photography and science communication. I enjoy making the most of my background in education to bridge academia and the wider public, and in 2018, I started La naturaleza al detalle, a nature photography blog where I use nature photography to share my passion for the natural world with a broad audience."
   },
   {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "CV",
     "section": "",
-    "text": "Coming soon."
+    "text": "PhD in Biology\nPlant Evolutionary Ecology Lab, University of Sussex, 2020–2025\nThesis: Floral evolution, plasticity and adaptation under novel environments\nMSc in Biology — Plant Science\nLund University, 2018–2020\nThesis: Plant-insect interactions and the evolution of polyploidy in Lithophragma bolanderi\nDegree in Biology — Environmental Biology\nUniversidad Complutense de Madrid, 2011–2015\nDegree in Teaching in Primary Education\nUniversidad Complutense de Madrid, 2008–2011"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "CV",
+    "section": "",
+    "text": "PhD in Biology\nPlant Evolutionary Ecology Lab, University of Sussex, 2020–2025\nThesis: Floral evolution, plasticity and adaptation under novel environments\nMSc in Biology — Plant Science\nLund University, 2018–2020\nThesis: Plant-insect interactions and the evolution of polyploidy in Lithophragma bolanderi\nDegree in Biology — Environmental Biology\nUniversidad Complutense de Madrid, 2011–2015\nDegree in Teaching in Primary Education\nUniversidad Complutense de Madrid, 2008–2011"
+  },
+  {
+    "objectID": "cv.html#research-experience",
+    "href": "cv.html#research-experience",
+    "title": "CV",
+    "section": "Research Experience",
+    "text": "Research Experience\nResearcher — SPACE Group, Lund University (2025–present)\nFloral integration, evolvability, and pollinator-mediated selection across altitudinal gradients in high Andean ecosystems.\nPhD Researcher — University of Sussex (2020–2025)\nPlasticity, evolvability and local adaptation of the flower phenotype under environmental and pollinator change.\nBotanical Surveyor — UK Centre for Ecology & Hydrology (May–Sep 2025)\nSurveying of vascular plants and habitat mapping as part of the LandSpAES project.\nResearch Assistant — Carlos III Health Research Institute (2017–2018)\nCharacterisation of brain tumours and identification of potential treatment targets.\nField Research Assistant — Torres del Paine National Park, Chile (2016–2017)\nPost-fire vegetation recovery monitoring in the Patagonian steppe."
+  },
+  {
+    "objectID": "cv.html#teaching-experience",
+    "href": "cv.html#teaching-experience",
+    "title": "CV",
+    "section": "Teaching Experience",
+    "text": "Teaching Experience\nDoctoral Tutor — University of Sussex (2021–2025)\n\nIntroduction to Evolution and Biodiversity (18h)\nEnvironmental Research Skills (79.2h)\nAcademic Skills in Life Sciences (22h)\nMediterranean Ecology Field Course (67.5h)\nTropical Rainforest Science Field Course (180.5h)"
+  },
+  {
+    "objectID": "cv.html#grants-awards",
+    "href": "cv.html#grants-awards",
+    "title": "CV",
+    "section": "Grants & Awards",
+    "text": "Grants & Awards\nSwedish Phytogeographical Society Research Scholarship (2026)\nFloral integration and adaptation to changing environments in Andean alpine communities — 40,000 SEK"
   },
   {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "SHM Koivusaari, MH Hällfors, J Hjort, M‐T Hyvärinen, M Levo, M Luoto, C Møller, ØH Opedal, L Pietikäinen, Andrés Romero-Bravo, ALK Mattila (2026). Greater Thermal Plasticity Toward Heterogeneous Range‐Edge Environments of Three Hypericum Species. Ecology and Evolution, 16 (5), e73486. Citations: 0\nRead it"
+    "text": "SHM Koivusaari, MH Hällfors, J Hjort, M‐T Hyvärinen, M Levo, M Luoto, C Møller, ØH Opedal, L Pietikäinen, Andrés Romero-Bravo, ALK Mattila (2026). Greater Thermal Plasticity Toward Heterogeneous Range‐Edge Environments of Three Hypericum Species. Ecology and Evolution, 16 (5), e73486.\nCitations: 0\nRead it"
   },
   {
     "objectID": "publications.html#section",
     "href": "publications.html#section",
     "title": "Publications",
     "section": "",
-    "text": "SHM Koivusaari, MH Hällfors, J Hjort, M‐T Hyvärinen, M Levo, M Luoto, C Møller, ØH Opedal, L Pietikäinen, Andrés Romero-Bravo, ALK Mattila (2026). Greater Thermal Plasticity Toward Heterogeneous Range‐Edge Environments of Three Hypericum Species. Ecology and Evolution, 16 (5), e73486. Citations: 0\nRead it"
+    "text": "SHM Koivusaari, MH Hällfors, J Hjort, M‐T Hyvärinen, M Levo, M Luoto, C Møller, ØH Opedal, L Pietikäinen, Andrés Romero-Bravo, ALK Mattila (2026). Greater Thermal Plasticity Toward Heterogeneous Range‐Edge Environments of Three Hypericum Species. Ecology and Evolution, 16 (5), e73486.\nCitations: 0\nRead it"
   },
   {
     "objectID": "publications.html#section-1",
     "href": "publications.html#section-1",
     "title": "Publications",
     "section": "2025",
-    "text": "2025\nK Gross, HP Yazdi, E Schlager, J Lilley, Aés Romero-Bravo, A Runemark, JN Thompson, M Friberg (2025). Repeated polyploidization shapes divergence in floral morphology in Lithophragma bolanderi (Saxifragaceae). Proceedings of the National Academy of Sciences, 122 (33), e2505119122. Citations: 1\nRead it"
+    "text": "2025\nK Gross, HP Yazdi, E Schlager, J Lilley, Aés Romero-Bravo, A Runemark, JN Thompson, M Friberg (2025). Repeated polyploidization shapes divergence in floral morphology in Lithophragma bolanderi (Saxifragaceae). Proceedings of the National Academy of Sciences, 122 (33), e2505119122.\nCitations: 1\nRead it"
   },
   {
     "objectID": "publications.html#section-2",
     "href": "publications.html#section-2",
     "title": "Publications",
     "section": "2024",
-    "text": "2024\nAés Romero‐Bravo, MC Castellanos (2024). Nectar and floral morphology differ in evolutionary potential in novel pollination environments. New Phytologist, 243 (2), 753-764. Citations: 21\nRead it"
+    "text": "2024\nAés Romero‐Bravo, MC Castellanos (2024). Nectar and floral morphology differ in evolutionary potential in novel pollination environments. New Phytologist, 243 (2), 753-764.\nCitations: 21\nRead it"
   },
   {
     "objectID": "publications.html#section-3",
     "href": "publications.html#section-3",
     "title": "Publications",
     "section": "2020",
-    "text": "2020\nR Gargini, B Segura-Collar, B Herránz, V García-Escudero, Aés Romero-Bravo, FJ Núñez, D García-Pérez, J Gutiérrez-Guamán, A Ayuso-Sacido, J Seoane, A Pérez-Núñez, JM Sepúlveda-Sánchez, A Hernández-Laín, MíaG Castro, Rón García-Escudero, Jús Ávila, P Sánchez-Gómez (2020). The IDH-TAU-EGFR triad defines the neovascular landscape of diffuse gliomas. Science Translational Medicine, 12 (527). Citations: 96\nRead it"
+    "text": "2020\nR Gargini, B Segura-Collar, B Herránz, V García-Escudero, Aés Romero-Bravo, FJ Núñez, D García-Pérez, J Gutiérrez-Guamán, A Ayuso-Sacido, J Seoane, A Pérez-Núñez, JM Sepúlveda-Sánchez, A Hernández-Laín, MíaG Castro, Rón García-Escudero, Jús Ávila, P Sánchez-Gómez (2020). The IDH-TAU-EGFR triad defines the neovascular landscape of diffuse gliomas. Science Translational Medicine, 12 (527).\nCitations: 96\nRead it"
   }
 ]
