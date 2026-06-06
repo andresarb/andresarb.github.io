@@ -8,13 +8,26 @@ execute:
   cache: true
 ---
 
-```{r}
+<!-- 
+  NOTE: This page fetches publication data and citation counts from Google Scholar.
+  Results are cached locally to avoid repeated queries and slow load times.
+  
+  To update publications or citation counts (e.g. after a new paper is published
+  or to refresh citation numbers), run 'quarto render' in the terminal, then
+  commit and push the changes to GitHub.
+  
+  New DOIs must be added manually to the 'dois' vector in the R chunk below.
+-->
+
+```{r Download Scholar articles, filter and sort by year}
 #| results: asis
 library(scholar)
 library(dplyr)
 library(glue)
 
-pubs <- get_publications("6rW2FGoAAAAJ") |>
+scholar_id <- "6rW2FGoAAAAJ"
+
+pubs <- get_publications(scholar_id) |>
   filter(!is.na(year), year > 2018, journal != "") |>
   filter(!journal %in% c("University of Sussex", "")) |>
   arrange(desc(year))
@@ -33,9 +46,10 @@ for (yr in years) {
   yr_pubs <- filter(pubs, year == yr)
   for (i in seq_len(nrow(yr_pubs))) {
     p <- yr_pubs[i, ]
-    authors <- gsub("A Romero-Bravo|A Romero\u2010Bravo", "**A Romero-Bravo**", p$author)
+    full_authors <- get_complete_authors(scholar_id, p$pubid)[[1]]
+    authors <- gsub("A Romero-Bravo|A Romero\u2010Bravo|Andrés Romero-Bravo|Andres Romero-Bravo", "**Andrés Romero-Bravo**", full_authors)
     doi <- dois[p$title]
-    doi_link <- ifelse(!is.na(doi), glue(" [Read it]({doi})"), "")
+    doi_link <- ifelse(!is.na(doi), paste0("  \n[Read it](", doi, ")"), "")
     cat(glue("{authors} ({yr}). {p$title}. *{p$journal}*, {p$number}. **Citations: {p$cites}**{doi_link}\n\n"))
   }
 }
