@@ -47,7 +47,8 @@ for (yr in years) {
   for (i in seq_len(nrow(yr_pubs))) {
     p <- yr_pubs[i, ]
     full_authors <- get_complete_authors(scholar_id, p$pubid)[[1]]
-    authors <- gsub("A Romero-Bravo|A Romero\u2010Bravo|Andrés Romero-Bravo|Andres Romero-Bravo", "**Andrés Romero-Bravo**", full_authors)
+    full_authors <- gsub("Aés", "Andrés", full_authors)
+authors <- gsub("A Romero-Bravo|A Romero\u2010Bravo|Andrés Romero-Bravo|Andrés Romero\u2010Bravo|Andres Romero-Bravo", "**Andrés Romero-Bravo**", full_authors)
     doi <- dois[p$title]
     doi_link <- ifelse(!is.na(doi), paste0("  \n[Read it](", doi, ")"), "")
     cat(glue("{authors} ({yr}). {p$title}. *{p$journal}*, {p$number}.  \n**Citations: {p$cites}**{doi_link}\n\n"))
