@@ -18,7 +18,7 @@ toc: false
     </div>
   </div>
   <div class="about-text">
-    <h1>Andres Romero Bravo</h1>
+    <div class="name-title">Andres Romero Bravo</div>
     <p class="subtitle">Plant evolutionary ecologist</p>
     <p>¡Hola! I am Andrés. I am originally from Madrid (Spain), where I lived most of my life and started my higher education with a degree in Teaching and a degree in Biology. My academic career has taken me to live in places like Torres del Paine (Chile), Lund (Sweden), where I obtained a MSc in Plant Science, and Lewes (UK), where I studied my PhD. I have recently returned to Lund to continue my career as a postdoctoral researcher.</p>
     <p>I am fascinated by floral evolution and plant–pollinator interactions and I study the ecological and evolutionary processes that affect the responses of flowering plants to environmental change. In my research, I combine quantitative genetics, phenotypic plasticity, and field and greenhouse experiments to understand how reproductive and vegetative traits respond to changes in abiotic and biotic environments.</p>

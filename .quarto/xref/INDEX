@@ -1,17 +1,17 @@
 {
   "about.qmd": {
-    "about.html": "49d90d5b"
-  },
-  "index.qmd": {
-    "index.html": "155e05fa"
+    "about.html": "bf4cded0"
   },
   "cv.qmd": {
-    "cv.html": "2426dc5b"
+    "cv.html": "17e5d8c1"
   },
-  "research.qmd": {
-    "research.html": "202a6e16"
+  "index.qmd": {
+    "index.html": "a6e5cf44"
   },
   "publications.qmd": {
-    "publications.html": "e2ffc100"
+    "publications.html": "2ca3d0fe"
+  },
+  "research.qmd": {
+    "research.html": "af880690"
   }
 }

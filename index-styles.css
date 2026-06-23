@@ -1,15 +1,10 @@
 /* ─────────────────────────────────────────────────────────────
-   GLOBAL RESET — kill default margins/padding so our own
-   layout values are the only thing in control
+   HOME-PAGE-ONLY STYLES
+   Navbar/reset rules that apply to every page now live in
+   styles.css. This file contains only what's specific to
+   index.qmd: the banner image, its text overlay, and the
+   about+carousel side-by-side layout.
    ───────────────────────────────────────────────────────────── */
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-html {
-  scroll-padding-top: 0 !important;
-}
 
 body {
   overflow-x: hidden; /* prevent horizontal scrollbar from full-width elements (banner, home-layout) */
@@ -45,7 +40,6 @@ main.content,
 .page-navbar {
   padding: 0 !important;
 }
-
 /* Quarto's page grid (.page-columns) adds a row-gap that shows up
    as ~1rem (16px) of empty space above page content. Remove it. */
 .page-columns,
@@ -54,16 +48,6 @@ main.content,
   gap: 0 !important;
   row-gap: 0 !important;
   column-gap: 0 !important;
-}
-
-/* Quarto always inserts an empty <header id="title-block-header">
-   at the top of main content (for page titles). Ours is empty,
-   but it still carries a default margin-bottom (~17px) that pushes
-   the banner down. Hiding it removes that phantom gap entirely. */
-#title-block-header {
-  margin: 0 !important;
-  padding: 0 !important;
-  display: none !important;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -78,80 +62,8 @@ main.content,
 }
 
 /* ─────────────────────────────────────────────────────────────
-   NAVBAR — merged visually into the banner image below it.
-   The navbar is pulled out of normal layout flow (position:
-   absolute) and floated on top of the banner with a semi-
-   transparent dark background so the white nav text is legible
-   against the photo.
-   ───────────────────────────────────────────────────────────── */
-#quarto-header {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0;
-  right: 0;
-  z-index: 10; /* sits above the banner image */
-  width: 100%;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: rgba(0, 0, 0, 0.35) !important; /* dark tint so white nav text reads over the photo */
-  transform: none !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Quarto's "headroom" behaviour normally lets the navbar hide/show
-   on scroll and re-pins itself with a transform. We don't want any
-   of that here — force it to stay fixed at top: 0 always. */
-#quarto-header.headroom,
-.headroom--pinned,
-.headroom--unpinned,
-.headroom--top,
-.headroom--not-bottom {
-  position: absolute !important;
-  top: 0 !important;
-  transform: none !important;
-}
-
-/* The actual <nav class="navbar"> background is left transparent —
-   the dark tint above (on #quarto-header) already covers the full
-   header box, so we don't want to double it up here. */
-#quarto-header .navbar {
-  background: transparent !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-  padding-top: 0rem !important;    /* vertical centering of the nav row within the header bar */
-  padding-bottom: 0.05rem !important;
-}
-
-#quarto-header .navbar-brand,
-#quarto-header .nav-link {
-  color: white !important;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* keeps text legible over busy parts of the photo */
-}
-
-#quarto-header .navbar-brand {
-  font-size: 1.4rem;
-  font-weight: 700; /* site title "Andrés Romero Bravo" — bold and slightly larger */
-}
-
-#quarto-header .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.6); /* mobile hamburger button outline, visible on dark background */
-}
-
-#quarto-header .navbar-toggler-icon {
-  filter: invert(1); /* flips the hamburger icon to white */
-}
-
-/* Quarto sets an inline style="padding-top: ##px" on <body> via JS
-   to reserve space for the (normally non-overlaid) sticky navbar.
-   We don't need that space since our navbar floats over the banner. */
-body,
-body.nav-fixed.fullcontent.quarto-light {
-  padding-top: 0 !important;
-}
-
-/* ─────────────────────────────────────────────────────────────
    BANNER — full-width hero image with text overlay
+   (index.qmd only — other pages have no banner)
    ───────────────────────────────────────────────────────────── */
 .banner {
   width: 100vw;
@@ -177,7 +89,7 @@ body.nav-fixed.fullcontent.quarto-light {
   left: 0;
   right: 0;
   padding: 6px 40px 12px 24px;             /* top/bottom padding controls gap between line and text below it */
-  border-top: 2px solid rgba(255, 255, 255, 0.7); /* this IS the horizontal divider line */
+  border-top: 2px solid rgba(255, 255, 255, 0.95); /* this IS the horizontal divider line — width/color/opacity set here */
   color: white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }

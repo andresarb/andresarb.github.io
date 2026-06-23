@@ -1,5 +1,112 @@
 /* css styles */
 
+/* ─────────────────────────────────────────────────────────────
+   GLOBAL RESET — kill default margins/padding so layout values
+   below are the only thing in control. Applies to every page.
+   ───────────────────────────────────────────────────────────── */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html {
+  scroll-padding-top: 0 !important;
+}
+
+/* Quarto's auto-generated page title (e.g. "Research", "CV",
+   "Publications") lives here. On pages where title is empty
+   (index.qmd, about.qmd) this header has no content and we hide
+   it via :empty below. On pages with a real title, it renders
+   normally — main.content's padding-top already clears the
+   floating navbar above it. */
+#title-block-header {
+  margin: 0 !important;
+}
+
+#title-block-header:empty {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   NAVBAR — dark, semi-transparent, floating navbar used on every
+   page. On index.qmd it floats over the banner photo; on other
+   pages (no banner) it floats over the plain white background.
+   ───────────────────────────────────────────────────────────── */
+#quarto-header {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  z-index: 10; /* sits above page content / the banner image on index.qmd */
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: rgba(0, 0, 0, 0.35) !important; /* dark tint so white nav text reads clearly */
+  transform: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Quarto's "headroom" behaviour normally lets the navbar hide/show
+   on scroll and re-pins itself with a transform. We don't want any
+   of that — force it to stay fixed at top: 0 always. */
+#quarto-header.headroom,
+.headroom--pinned,
+.headroom--unpinned,
+.headroom--top,
+.headroom--not-bottom {
+  position: absolute !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+/* The actual <nav class="navbar"> background is left transparent —
+   the dark tint above (on #quarto-header) already covers the full
+   header box, so we don't want to double it up here. */
+#quarto-header .navbar {
+  background: transparent !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding-top: 0rem !important;       /* top margin of the nav row within the header bar */
+  padding-bottom: 0.05rem !important; /* controls where the bottom edge of the dark bar ends */
+}
+
+#quarto-header .navbar-brand,
+#quarto-header .nav-link {
+  color: white !important;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* keeps text legible on dark or busy backgrounds */
+}
+
+#quarto-header .navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 700; /* site title "Andrés Romero Bravo" — bold and slightly larger */
+}
+
+#quarto-header .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.6); /* mobile hamburger button outline, visible on dark background */
+}
+
+#quarto-header .navbar-toggler-icon {
+  filter: invert(1); /* flips the hamburger icon to white */
+}
+
+/* Quarto sets an inline style="padding-top: ##px" on <body> via JS
+   to reserve space for the (normally non-overlaid) sticky navbar.
+   We don't need that space since our navbar always floats on top. */
+body,
+body.nav-fixed.fullcontent.quarto-light {
+  padding-top: 0 !important;
+}
+
+/* Push page content down on pages WITHOUT a banner (about, cv,
+   research, publications), so it doesn't render underneath the
+   floating navbar. index.qmd overrides this back to 0 in its
+   own index-styles.css, since its banner already starts at
+   top: 0 and the navbar floats on top of the photo instead. */
+main.content {
+  padding-top: 90px !important;
+}
+
 /* ── Fade in on scroll ── */
 .fade-in-section {
   opacity: 0;
@@ -39,8 +146,12 @@
   border-radius: 8px;
 }
 
-.about-page .about-text h1 {
+.about-page .about-text .name-title {
   margin-top: 0;
+  margin-bottom: 17px;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .about-page .subtitle {
