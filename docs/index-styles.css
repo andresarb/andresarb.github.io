@@ -1,81 +1,185 @@
-/* ── Override Quarto's default container width limits ── */
-body > div {
-  max-width: 100% !important;
-}
-
-div.container-fluid {
-  max-width: 100% !important;
+/* ─────────────────────────────────────────────────────────────
+   GLOBAL RESET — kill default margins/padding so our own
+   layout values are the only thing in control
+   ───────────────────────────────────────────────────────────── */
+html, body {
+  margin: 0 !important;
   padding: 0 !important;
-  margin-top: 0 !important;
 }
 
-div[class*="container"] {
-  max-width: 100% !important;
+html {
+  scroll-padding-top: 0 !important;
 }
 
+body {
+  overflow-x: hidden; /* prevent horizontal scrollbar from full-width elements (banner, home-layout) */
+}
+
+/* ─────────────────────────────────────────────────────────────
+   QUARTO CONTAINER OVERRIDES — Quarto/Bootstrap wrap every page
+   in nested containers with their own max-width and padding.
+   We flatten all of them so our custom layout can use the
+   full viewport width.
+   ───────────────────────────────────────────────────────────── */
+body > div,
+div.container-fluid,
+div[class*="container"],
 .quarto-container {
   max-width: 100% !important;
   padding: 0 !important;
 }
 
-#quarto-content {
+#quarto-content,
+main,
+.page-columns,
+#quarto-document-content,
+#quarto-content > * {
   max-width: 100% !important;
-  padding-top: 0 !important;
   margin-top: 0 !important;
-}
-
-
-main {
   padding-top: 0 !important;
-  margin-top: 0 !important;
 }
 
-/* ── Prevent horizontal scrollbar from full-width elements ── */
-body {
-  overflow-x: hidden;
+main.content,
+#quarto-document-content,
+.page-layout-article,
+.page-navbar {
+  padding: 0 !important;
 }
 
-/* ── Wrapper for about and contact sections — controls their max width ── */
+/* Quarto's page grid (.page-columns) adds a row-gap that shows up
+   as ~1rem (16px) of empty space above page content. Remove it. */
+.page-columns,
+.page-columns.page-full,
+.page-rows-contents {
+  gap: 0 !important;
+  row-gap: 0 !important;
+  column-gap: 0 !important;
+}
+
+/* Quarto always inserts an empty <header id="title-block-header">
+   at the top of main content (for page titles). Ours is empty,
+   but it still carries a default margin-bottom (~17px) that pushes
+   the banner down. Hiding it removes that phantom gap entirely. */
+#title-block-header {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CONTENT WIDTH WRAPPER — used by the about/contact sections
+   to keep a comfortable max reading width on normal (non
+   full-bleed) parts of the page.
+   ───────────────────────────────────────────────────────────── */
 .page-content {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 0 1rem; /* reduced padding = wider content */
+  padding: 0 1rem;
 }
 
-/* ── Full-width banner image ── */
+/* ─────────────────────────────────────────────────────────────
+   NAVBAR — merged visually into the banner image below it.
+   The navbar is pulled out of normal layout flow (position:
+   absolute) and floated on top of the banner with a semi-
+   transparent dark background so the white nav text is legible
+   against the photo.
+   ───────────────────────────────────────────────────────────── */
+#quarto-header {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  z-index: 10; /* sits above the banner image */
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: rgba(0, 0, 0, 0.35) !important; /* dark tint so white nav text reads over the photo */
+  transform: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Quarto's "headroom" behaviour normally lets the navbar hide/show
+   on scroll and re-pins itself with a transform. We don't want any
+   of that here — force it to stay fixed at top: 0 always. */
+#quarto-header.headroom,
+.headroom--pinned,
+.headroom--unpinned,
+.headroom--top,
+.headroom--not-bottom {
+  position: absolute !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+/* The actual <nav class="navbar"> background is left transparent —
+   the dark tint above (on #quarto-header) already covers the full
+   header box, so we don't want to double it up here. */
+#quarto-header .navbar {
+  background: transparent !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding-top: 0rem !important;    /* vertical centering of the nav row within the header bar */
+  padding-bottom: 0.05rem !important;
+}
+
+#quarto-header .navbar-brand,
+#quarto-header .nav-link {
+  color: white !important;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* keeps text legible over busy parts of the photo */
+}
+
+#quarto-header .navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 700; /* site title "Andrés Romero Bravo" — bold and slightly larger */
+}
+
+#quarto-header .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.6); /* mobile hamburger button outline, visible on dark background */
+}
+
+#quarto-header .navbar-toggler-icon {
+  filter: invert(1); /* flips the hamburger icon to white */
+}
+
+/* Quarto sets an inline style="padding-top: ##px" on <body> via JS
+   to reserve space for the (normally non-overlaid) sticky navbar.
+   We don't need that space since our navbar floats over the banner. */
+body,
+body.nav-fixed.fullcontent.quarto-light {
+  padding-top: 0 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   BANNER — full-width hero image with text overlay
+   ───────────────────────────────────────────────────────────── */
 .banner {
   width: 100vw;
-  margin-left: calc(-50vw + 50%); /* breaks out of Quarto content column */
+  margin-left: calc(-50vw + 50%); /* breaks out of Quarto's centered content column to span the full viewport */
   position: relative;
   overflow: hidden;
 }
 
-/* ── Banner image sizing and crop position ── */
-/* object-position: center X% — higher % = shows more of bottom */
 .banner img {
   width: 100%;
   height: 260px;
   object-fit: cover;
-  object-position: center 83%;
+  object-position: center 83%; /* object-position Y% — higher % shows more of the bottom of the image */
   display: block;
 }
 
-/* ── Text overlay on banner — sits at top with gradient behind it ── */
+/* Subtitle ("Plant Evolutionary Biologist") + horizontal divider line,
+   positioned to sit directly below the navbar so the two look like
+   one continuous header block over the banner image. */
 .banner-overlay {
   position: absolute;
-  top: 0;
+  top: 47px;        /* vertical position of line + text, relative to banner top — tune this if navbar height changes */
   left: 0;
   right: 0;
-  padding: 20px 40px;
-  background: linear-gradient(rgba(0,0,0,0.5), transparent); /* dark at top, fades down */
+  padding: 6px 40px 12px 24px;             /* top/bottom padding controls gap between line and text below it */
+  border-top: 2px solid rgba(255, 255, 255, 0.7); /* this IS the horizontal divider line */
   color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-}
-
-.banner-overlay h2 {
-  margin: 0;
-  font-size: 2rem;
-  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .banner-overlay p {
@@ -84,7 +188,11 @@ body {
   color: white;
 }
 
-/* ── About section — photo on left, text on right ── */
+/* ─────────────────────────────────────────────────────────────
+   ABOUT SECTION — profile photo + bio + links
+   Used standalone on other pages, and nested inside .home-layout
+   on the home page (see below) for the 1/3-ish column treatment.
+   ───────────────────────────────────────────────────────────── */
 .about-section {
   display: flex;
   align-items: center;
@@ -93,10 +201,9 @@ body {
   max-width: 1200px;
 }
 
-/* ── Circular profile photo ── */
 .about-photo img {
   width: 200px;
-  border-radius: 50%;
+  border-radius: 50%; /* circular profile photo */
 }
 
 .subtitle {
@@ -104,51 +211,117 @@ body {
   font-size: 1.1rem;
 }
 
-/* ── Social media icon links ── */
 .social-links a {
   font-size: 1.5rem;
   margin-right: 0.8rem;
   color: inherit;
 }
 
-/* ── Slick image carousel wrapper ── */
-/* max-width controls how wide the carousel is */
+/* ─────────────────────────────────────────────────────────────
+   HOME PAGE LAYOUT — about column + spacer + carousel column,
+   side by side, full viewport width with margins.
+   Proportions: 1/15 left margin, 5/12 about, 1/15 gap, 7/12 carousel,
+   1/15 right margin (margins handled by the "padding" below;
+   the 5/12–7/12 split applies to the remaining space).
+   ───────────────────────────────────────────────────────────── */
+.home-layout {
+  display: flex;
+  align-items: flex-start;
+  margin: 2rem auto;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%); /* full-bleed, same trick as .banner */
+  padding: 0 calc(100% / 15);     /* 1/15 blank margin on left and right */
+  box-sizing: border-box;
+}
+
+.home-layout .about-section {
+  flex: 0 0 calc(5/12 * (100% - (100% / 15)));
+  max-width: calc(5/12 * (100% - (100% / 15)));
+  flex-direction: column; /* stack photo above text in this narrower column */
+  text-align: center;
+  margin: 0;
+}
+
+.home-layout .about-section .about-photo img {
+  width: 220px; /* larger than the default .about-photo size used elsewhere */
+}
+
+.home-layout .social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Blank spacer column between about and carousel (1/15 of available width) */
+.home-spacer {
+  flex: 0 0 calc(100% / 15);
+  max-width: calc(100% / 15);
+}
+
+.home-carousel {
+  flex: 0 0 calc(7/12 * (100% - (100% / 15)));
+  max-width: calc(7/12 * (100% - (100% / 15)));
+}
+
+.home-carousel .slick-carousel-wrapper {
+  margin: 0;
+  max-width: none; /* overrides the default 1400px cap so it can use the full column width */
+  width: 100%;
+}
+
+/* Stack everything vertically on small screens */
+@media (max-width: 900px) {
+  .home-layout {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .home-layout .about-section,
+  .home-carousel {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .home-spacer {
+    display: none;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CAROUSEL (Slick) — image strip with center mode + lightbox
+   ───────────────────────────────────────────────────────────── */
 .slick-carousel-wrapper {
-  max-width: 1400px;
+  max-width: 1400px; /* default cap; overridden to 100% inside .home-carousel above */
   margin: 2rem auto;
   overflow: hidden;
 }
 
-/* ── Vertically centers images of different heights in the carousel ── */
 .slick-carousel .slick-track {
   display: flex;
-  align-items: center;
+  align-items: center; /* vertically centers images of different heights */
 }
 
-/* ── Individual carousel images ── */
-/* height: fixed height for consistency; object-fit: cover fills without distortion */
 .slick-carousel img {
   height: 400px;
   width: 100%;
-  object-fit: cover;
+  object-fit: cover; /* fills the fixed height without distortion */
   padding: 0 10px;
   border-radius: 8px;
-  cursor: pointer; /* shows pointer to indicate clickable */
+  cursor: pointer; /* hints that clicking opens the lightbox */
 }
 
-/* ── Fullscreen lightbox overlay when clicking a carousel image ── */
-/* Click anywhere on the overlay to close it */
+/* Fullscreen lightbox overlay — click anywhere to close */
 .lightbox-overlay {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
   z-index: 9999;
   cursor: pointer;
 }
 
-/* ── The enlarged image inside the lightbox ── */
 .lightbox-overlay img {
   max-width: 90%;
   max-height: 90vh;
@@ -159,7 +332,9 @@ body {
   margin-top: 5vh;
 }
 
-/* ── Contact section ── */
+/* ─────────────────────────────────────────────────────────────
+   CONTACT SECTION
+   ───────────────────────────────────────────────────────────── */
 .contact-section {
   margin-top: 3rem;
   text-align: center;

@@ -4,7 +4,7 @@ project:
   resources:
     - .nojekyll
 website:
-  title: "Andres Romero Bravo"
+  title: "Andrés Romero Bravo"
   navbar:
     left:
       - href: index.qmd
