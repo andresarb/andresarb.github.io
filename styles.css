@@ -41,10 +41,34 @@ html {
   width: 100%;
   margin: 0 !important;
   padding: 0 !important;
-  background: rgba(0, 0, 0, 0.35) !important; /* dark tint so white nav text reads clearly */
+  background-image: url("images/banner_Gavilea_araucana.webp");
+  background-size: cover;
+  background-position: center 83%; /* matches .banner img crop on index.qmd */
   transform: none !important;
   border: none !important;
   box-shadow: none !important;
+}
+
+/* dark tint overlay on top of the banner photo, so nav text stays legible */
+#quarto-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+/* index.qmd already shows the full banner photo below the navbar,
+   so the navbar itself doesn't need its own background image there
+   — it just floats transparently (tinted by #quarto-header::before
+   only where it overlaps the visible .banner below). To avoid a
+   double/misaligned crop, suppress the navbar's own background
+   image specifically on index.qmd. */
+body:has(.banner) #quarto-header {
+  background-image: none;
 }
 
 /* Quarto's "headroom" behaviour normally lets the navbar hide/show
@@ -104,7 +128,7 @@ body.nav-fixed.fullcontent.quarto-light {
    own index-styles.css, since its banner already starts at
    top: 0 and the navbar floats on top of the photo instead. */
 main.content {
-  padding-top: 90px !important;
+  padding-top: 65px !important;
 }
 
 /* ── Fade in on scroll ── */
