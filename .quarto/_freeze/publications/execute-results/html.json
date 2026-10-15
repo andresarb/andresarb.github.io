@@ -1,0 +1,15 @@
+{
+  "hash": "91dcf06ae0ba074fd12502ab0e3f5992",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Publications\"\ntoc: false\nexecute:\n  echo: false\n  warning: false\n  message: false\n  cache: true\n---\n\n<!-- \n  NOTE: This page fetches publication data and citation counts from Google Scholar.\n  Results are cached locally to avoid repeated queries and slow load times.\n  \n  To update publications or citation counts (e.g. after a new paper is published\n  or to refresh citation numbers), run 'quarto render' in the terminal, then\n  commit and push the changes to GitHub.\n  \n  New DOIs must be added manually to the 'dois' vector in the R chunk below.\n-->\n\n\n## 2026\n\nSHM Koivusaari, MH Hällfors, J Hjort, M‐T Hyvärinen, M Levo, M Luoto, C Møller, ØH Opedal, L Pietikäinen, **Andrés Romero-Bravo**, ALK Mattila (2026). Greater Thermal Plasticity Toward Heterogeneous Range‐Edge Environments of Three Hypericum Species. *Ecology and Evolution*, 16 (5), e73486.  \n**Citations: 0**  \n[Read it](https://doi.org/10.1002/ece3.73486)\n\n## 2025\n\nK Gross, HP Yazdi, E Schlager, J Lilley, **Andrés Romero-Bravo**, A Runemark, JN Thompson, M Friberg (2025). Repeated polyploidization shapes divergence in floral morphology in Lithophragma bolanderi (Saxifragaceae). *Proceedings of the National Academy of Sciences*, 122 (33), e2505119122.  \n**Citations: 3**  \n[Read it](https://doi.org/10.1073/pnas.2505119122)\n\n## 2024\n\n**Andrés Romero-Bravo**, MC Castellanos (2024). Nectar and floral morphology differ in evolutionary potential in novel pollination environments. *New Phytologist*, 243 (2), 753-764.  \n**Citations: 24**  \n[Read it](https://doi.org/10.1111/nph.19780)\n\n## 2020\n\nR Gargini, B Segura-Collar, B Herránz, V García-Escudero, **Andrés Romero-Bravo**, FJ Núñez, D García-Pérez, J Gutiérrez-Guamán, A Ayuso-Sacido, J Seoane, A Pérez-Núñez, JM Sepúlveda-Sánchez, A Hernández-Laín, MíaG Castro, Rón García-Escudero, Jús Ávila, P Sánchez-Gómez (2020). The IDH-TAU-EGFR triad defines the neovascular landscape of diffuse gliomas. *Science Translational Medicine*, 12 (527).  \n**Citations: 99**  \n[Read it](https://doi.org/10.1126/scitranslmed.aax1501)",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
