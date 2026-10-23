@@ -3,9 +3,19 @@ title: "Research"
 toc: false
 ---
 
+::: {.grid}
+::: {.g-col-12 .g-col-md-8}
 I'm fascinated by flowers and their evolution. Who wouldn't be? Flowers are beautifully complex and ecologically important organs, and evolution has produced an astonishing diversity of them, on which most terrestrial ecosystems depend. How, when and why did they evolve? What mechanisms and processes drive floral evolution? And how might climate change affect it?
 
 Through my research, I study how flowering plants evolve and respond to changes in their environment. I focus mainly, but not only, on the ecological and evolutionary processes shaping floral and vegetative traits, and on how their evolution is affected by changes in pollinators and abiotic factors, such as those associated with climate change and introduction events. To explore this, I combine field and greenhouse studies to compare the evolvability, phenotypic plasticity and divergence of vegetative and floral traits, including flower morphology and nectar.
+:::
+::: {.g-col-12 .g-col-md-4}
+```{=html}
+<img src="images/research/Bol_IMG-20261012-WA0031.jpg" alt="Andrés working in the dry valle of La Paz, Bolivia" class="intro-img">
+<p class="img-credit">© Andrés Romero Bravo</p>
+```
+:::
+:::
 
 ---
 
@@ -120,8 +130,8 @@ $(function(){
     fade: true
   });
 
-  // Lightbox: click a carousel image to view it full screen
-  $(document).on('click', '.mini-carousel img', function(){
+  // Lightbox: click a carousel or intro image to view it full screen
+  $(document).on('click', '.mini-carousel img, .intro-img', function(){
     $('#lightbox-img').attr('src', $(this).attr('src'));
     $('#lightbox').fadeIn();
   });
