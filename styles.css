@@ -265,3 +265,17 @@ main.content {
   opacity: 1 !important;      /* stops scroll-fade.js from hiding it */
   transform: none !important;
 }
+
+
+/* ── Keep photo + icons fixed while scrolling (about page) ── */
+.about-page .about-photo {
+  position: sticky;
+  top: 80px;          /* space below the navbar; adjust as needed */
+  align-self: flex-start;
+}
+
+/* Disable on small screens, where the layout stacks */
+@media (max-width: 768px) {
+  .about-page { flex-direction: column; }
+  .about-page .about-photo { position: static; }
+}
