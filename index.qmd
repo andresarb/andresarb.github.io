@@ -62,16 +62,11 @@ imgs <- list.files("images/carousel", full.names = FALSE)
 cat('<div class="slick-carousel-wrapper">\n')
 cat('<div class="slick-carousel">\n')
 for (i in seq_along(imgs)) {
-  cat(paste0(
-    '<div>',
-    '<a href="images/carousel/', imgs[i], '" class="lightbox-link">',
-    '<img src="images/carousel/', imgs[i], '" alt=""></a>',
-    '<p class="img-credit">© Andrés Romero Bravo</p>',   # NEW
-    '</div>\n'
-  ))
+  cat(paste0('<div><a href="images/carousel/', imgs[i], '" class="lightbox-link"><img src="images/carousel/', imgs[i], '" alt=""></a></div>\n'))
 }
 cat('</div>\n')
 cat('</div>\n')
+cat('<p class="img-credit carousel-credit">© Andrés Romero Bravo</p>\n')
 ```
 
 ```{=html}
