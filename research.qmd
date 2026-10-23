@@ -19,7 +19,7 @@ Through my research, I study how flowering plants evolve and respond to changes 
 
 ---
 
-## Floral evolution in high Andean ecosystems
+## Floral evolution along Andean altitudinal gradients
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-4}
