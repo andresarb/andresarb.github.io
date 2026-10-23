@@ -246,8 +246,9 @@ main.content,
   text-align: center;
 }
 
-/* Photo credit below home carousel */
+/* Photo credit below home carousel — same line as the dots */
 .carousel-credit {
-  text-align: center;
-  margin-top: 1.5rem; /* clears the carousel dots */
+  text-align: right;
+  margin-top: -1.5rem; /* pulls it up level with the dots; tweak if needed */
+  margin-bottom: 0;
 }
