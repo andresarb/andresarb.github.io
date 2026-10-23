@@ -234,16 +234,14 @@ $(document).ready(function(){
   var shuffled = $slides.toArray().sort(function(){ return Math.random() - 0.5; });
   $carousel.empty().append(shuffled);
   $carousel.slick({
-    centerMode: true,
-    centerPadding: '120px',
+    fade: true,              // same crossfade as the research page carousels
     slidesToShow: 1,
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: false,
     dots: true,
     infinite: true,
-    adaptiveHeight: false,
-    initialSlide: 1
+    adaptiveHeight: false
   });
   // Lightbox
   $(document).on('click', '.lightbox-link', function(e){

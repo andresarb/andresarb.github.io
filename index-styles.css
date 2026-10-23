@@ -199,7 +199,7 @@ main.content,
 }
 
 /* ─────────────────────────────────────────────────────────────
-   CAROUSEL (Slick) — image strip with center mode + lightbox
+   CAROUSEL (Slick) — one image at a time with crossfade + lightbox
    ───────────────────────────────────────────────────────────── */
 .slick-carousel-wrapper {
   max-width: 1400px; /* default cap; overridden to 100% inside .home-carousel above */
@@ -207,16 +207,10 @@ main.content,
   overflow: hidden;
 }
 
-.slick-carousel .slick-track {
-  display: flex;
-  align-items: center; /* vertically centers images of different heights */
-}
-
 .slick-carousel img {
   height: 400px;
   width: 100%;
   object-fit: cover; /* fills the fixed height without distortion */
-  padding: 0 10px;
   border-radius: 8px;
   cursor: pointer; /* hints that clicking opens the lightbox */
 }
