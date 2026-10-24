@@ -94,7 +94,7 @@ Rising temperatures are imposing new selection pressures on plants worldwide, wh
 ::: {.g-col-12 .g-col-md-8}
 *Lund University*
 
-Whole-genome duplication is a major driver of plant diversification. The perennial herb _Lithophragma bolanderi_ comprises diploid, tetraploid and hexaploid populations, with polyploids having originated through repeated autopolyploidization. This species coevolves with its specialised pollinators, _Greya_ moths, with which it forms a nursery pollination system. As part of this project, I combine range-wide sampling, common-garden and crossing experiments, genomics and field surveys to study how polyploidy shapes floral morphology and plant–pollinator interactions. Ongoing work explores how polyploids overcome reproductive isolation from their ancestors and establish despite the minority cytotype disadvantage.
+Whole-genome duplication is a major driver of plant diversification. The perennial herb _Lithophragma bolanderi_ comprises diploid, tetraploid and hexaploid populations. This species coevolves with its specialised pollinators, _Greya_ moths, with which it forms a nursery pollination system. As part of this project, I combine range-wide sampling, common-garden and crossing experiments, genomics and field surveys to study how polyploidy shapes floral morphology and plant–pollinator interactions. Ongoing work explores how polyploids overcome reproductive isolation from their ancestors and establish despite the minority cytotype disadvantage.
 :::
 :::
 
