@@ -38,3 +38,5 @@ format:
       - contact.html
       - text: |
           <script src="scroll-fade.js"></script>
+          <script data-goatcounter="https://andresarb.goatcounter.com/count"
+                  async src="//gc.zgo.at/count.js"></script>
