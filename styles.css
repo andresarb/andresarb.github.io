@@ -270,3 +270,12 @@ main.content {
   opacity: 1 !important;      /* stops scroll-fade.js from hiding it */
   transform: none !important;
 }
+
+/* ─────────────────────────────────────────────────────────────
+   CONTACT SECTION
+   ───────────────────────────────────────────────────────────── */
+.contact-section {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}

@@ -38,14 +38,15 @@ execute:
         <a href="publications.html">Publications</a>
       </p>
       <div class="social-links">
-        <a href="mailto:andres.romero_bravo@biol.lu.se" title="Email" aria-label="Email"><i class="bi bi-envelope"></i></a>
-        <a href="https://portal.research.lu.se/en/persons/andr%C3%A9s-romero-bravo/" target="_blank" title="Lund University profile" aria-label="Lund University profile"><i class="bi bi-person-badge"></i></a>
-        <a href="https://linkedin.com/in/aromerobravo" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-        <a href="https://bsky.app/profile/a-romerobravo.bsky.social" target="_blank" title="Bluesky" aria-label="Bluesky"><i class="bi bi-bluesky"></i></a>
-        <a href="https://spain.inaturalist.org/people/andresrb" target="_blank" title="iNaturalist" aria-label="iNaturalist"><i class="bi bi-leaf"></i></a>
-        <a href="https://www.peakbagger.com/climber/ClimbListC.aspx?cid=53158&u=m&j=-1&y=9999&oid=&oname=&sort=ascentdated" target="_blank" title="Peakbagger" aria-label="Peakbagger"><i class="bi bi-triangle-fill"></i></a>
-        <a href="https://github.com/andresarb" target="_blank" title="GitHub" aria-label="GitHub"><i class="bi bi-github"></i></a>
-      </div>
+  <a href="mailto:andres.romero_bravo@biol.lu.se" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+  <a href="https://portal.research.lu.se/en/persons/andr%C3%A9s-romero-bravo/" target="_blank" title="Lund University profile" aria-label="Lund University profile"><i class="fa-solid fa-id-card-clip"></i></a>
+  <a href="https://orcid.org/0000-0003-0810-363X" target="_blank" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
+  <a href="https://linkedin.com/in/aromerobravo" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+  <a href="https://bsky.app/profile/a-romerobravo.bsky.social" target="_blank" title="Bluesky" aria-label="Bluesky"><i class="bi bi-bluesky"></i></a>
+  <a href="https://spain.inaturalist.org/people/andresrb" target="_blank" title="iNaturalist" aria-label="iNaturalist"><i class="ai ai-inaturalist"></i></a>
+  <a href="https://www.peakbagger.com/climber/ClimbListC.aspx?cid=53158&sort=AscentDate&u=m&j=-1&y=9999" target="_blank" title="Peakbagger" aria-label="Peakbagger"><i class="fa-solid fa-mountain"></i></a>
+  <a href="https://github.com/andresarb" target="_blank" title="GitHub" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
     </div>
   </div>
 
@@ -76,16 +77,6 @@ cat('<p class="img-credit carousel-credit">© Andrés Romero Bravo</p>\n')
 ```
 
 ```{=html}
-<div class="page-content">
-<!-- Contact -->
-<div class="contact-section">
-  <h2>Contact</h2>
-  <p>📧 <a href="mailto:andres.romero_bravo@biol.lu.se">andres.romero_bravo@biol.lu.se</a> / <a href="mailto:aromerobravo@gmail.com">aromerobravo@gmail.com</a></p>
-  <p>🏛️ Department of Biology, Lund University<br>
-  Ecologihuset, Kontaktvägen 10, 22362 Lund, Sweden</p>
-</div>
-</div>
-
 <!-- Lightbox overlay -->
 <div id="lightbox" class="lightbox-overlay" onclick="this.style.display='none'">
   <img id="lightbox-img" src="" alt="">

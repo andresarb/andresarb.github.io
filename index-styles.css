@@ -238,13 +238,6 @@ main.content,
   margin-top: 5vh;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   CONTACT SECTION
-   ───────────────────────────────────────────────────────────── */
-.contact-section {
-  margin-top: 3rem;
-  text-align: center;
-}
 
 /* Photo credit below home carousel — same line as the dots */
 .carousel-credit {
