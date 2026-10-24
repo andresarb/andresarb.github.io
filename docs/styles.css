@@ -1,8 +1,13 @@
-/* css styles */
+/* =============================================================
+   styles.css — site-wide styles (loaded on every page)
+   index.qmd additionally loads index-styles.css
+   ============================================================= */
+
 
 /* ─────────────────────────────────────────────────────────────
-   GLOBAL RESET — kill default margins/padding so layout values
-   below are the only thing in control. Applies to every page.
+   GLOBAL RESET
+   Removes browser/Quarto default margins and padding so the
+   layout values below are the only ones in control.
    ───────────────────────────────────────────────────────────── */
 html, body {
   margin: 0 !important;
@@ -10,66 +15,65 @@ html, body {
 }
 
 html {
-  scroll-padding-top: 0 !important;
+  scroll-padding-top: 0 !important; /* no offset when jumping to anchors */
 }
 
-/* Quarto's auto-generated page title (e.g. "Research", "CV",
-   "Publications") lives here. On pages where title is empty
-   (index.qmd, about.qmd) this header has no content and we hide
-   it via :empty below. On pages with a real title, it renders
-   normally — main.content's padding-top already clears the
-   floating navbar above it. */
+
+/* ─────────────────────────────────────────────────────────────
+   PAGE TITLE BLOCK
+   Quarto renders the YAML title (e.g. "CV", "Publications") here.
+   On pages with an empty title (index, about) the header is empty
+   and is hidden; on other pages it renders normally.
+   ───────────────────────────────────────────────────────────── */
 #title-block-header {
-  margin: 0 !important;
+  margin: 0 !important;             /* remove default bottom gap */
 }
 
 #title-block-header:empty {
-  display: none !important;
+  display: none !important;         /* hide when there is no title */
 }
 
+
 /* ─────────────────────────────────────────────────────────────
-   NAVBAR — dark, semi-transparent, floating navbar used on every
-   page. On index.qmd it floats over the banner photo; on other
-   pages (no banner) it shows its own copy of the banner photo.
+   NAVBAR
+   Floating, semi-transparent navbar used on every page. On
+   index.qmd it sits over the banner photo; on other pages it
+   shows its own crop of the same photo as background.
    ───────────────────────────────────────────────────────────── */
 #quarto-header {
-  position: absolute !important;
+  position: absolute !important;    /* float above page content */
   top: 0 !important;
   left: 0;
   right: 0;
-  z-index: 10; /* sits above page content / the banner image on index.qmd */
+  z-index: 10;                      /* stay above content and banner */
   width: 100%;
   margin: 0 !important;
   padding: 0 !important;
   background-image: url("images/banner_Gavilea_araucana.webp");
   background-size: cover;
-  background-position: center 83%; /* matches .banner img crop on index.qmd */
+  background-position: center 83%;  /* match the .banner img crop on index.qmd */
   transform: none !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-/* dark tint overlay on top of the banner photo, so nav text stays legible */
+/* Dark tint over the navbar photo so white text stays legible */
 #quarto-header::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: -1;
+  inset: 0;                         /* cover the whole header box */
+  background: rgba(0, 0, 0, 0.35);  /* tint strength: raise alpha to darken */
+  z-index: -1;                      /* sit behind the nav text */
 }
 
-/* index.qmd already shows the full banner photo below the navbar,
-   so suppress the navbar's own background image there to avoid a
-   double/misaligned crop. */
+/* On index.qmd the full banner is already visible below the navbar,
+   so drop the navbar's own photo to avoid a double image. */
 body:has(.banner) #quarto-header {
   background-image: none;
 }
 
-/* Disable Quarto's "headroom" hide/show-on-scroll behaviour —
-   keep the navbar fixed at top: 0 always. */
+/* Disable Quarto's "headroom" hide-on-scroll behaviour and keep
+   the navbar fixed at the top of the page. */
 #quarto-header.headroom,
 .headroom--pinned,
 .headroom--unpinned,
@@ -80,66 +84,93 @@ body:has(.banner) #quarto-header {
   transform: none !important;
 }
 
-/* The <nav class="navbar"> itself stays transparent — the tint on
-   #quarto-header already covers the full header box. */
+/* Inner <nav> stays transparent; the tint above already covers it */
 #quarto-header .navbar {
   background: transparent !important;
   box-shadow: none !important;
   margin: 0 !important;
-  padding-top: 0rem !important;       /* top margin of the nav row within the header bar */
-  padding-bottom: 0.05rem !important; /* controls where the bottom edge of the dark bar ends */
+  padding-top: 0 !important;        /* space above the nav row */
+  padding-bottom: 0.05rem !important; /* where the dark bar ends below the nav row */
 }
 
+/* Nav text: white with a soft shadow for legibility on the photo */
 #quarto-header .navbar-brand,
 #quarto-header .nav-link {
   color: white !important;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* keeps text legible on dark or busy backgrounds */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
+/* Site title ("Andrés Romero Bravo"): larger and bold */
 #quarto-header .navbar-brand {
   font-size: 1.4rem;
-  font-weight: 700; /* site title "Andrés Romero Bravo" — bold and slightly larger */
+  font-weight: 700;
 }
 
+/* Mobile menu button: white outline and icon on the dark bar */
 #quarto-header .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.6); /* mobile hamburger button outline */
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 #quarto-header .navbar-toggler-icon {
-  filter: invert(1); /* flips the hamburger icon to white */
+  filter: invert(1);                /* turn the dark hamburger icon white */
 }
 
-/* Quarto adds inline padding-top to <body> for a sticky navbar.
-   Not needed since our navbar floats on top. */
+/* Quarto adds body padding for a sticky navbar; not needed here
+   because the navbar floats on top of the content. */
 body,
 body.nav-fixed.fullcontent.quarto-light {
   padding-top: 0 !important;
 }
 
-/* Push content below the floating navbar on pages WITHOUT a banner
-   (about, cv, research, publications). index-styles.css resets
+/* Push content below the navbar on pages without a banner
+   (about, research, cv, publications). index-styles.css resets
    this to 0 on index.qmd. */
 main.content {
   padding-top: 65px !important;
 }
 
+
 /* ─────────────────────────────────────────────────────────────
-   FADE IN ON SCROLL (used by scroll-fade.js)
+   FADE IN ON SCROLL
+   Classes added by scroll-fade.js: elements start hidden and
+   fade/slide in when they enter the viewport.
    ───────────────────────────────────────────────────────────── */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(20px);      /* start slightly lower */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .fade-in-section.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0);         /* settle into place */
 }
 
+
 /* ─────────────────────────────────────────────────────────────
-   ABOUT PAGE — photo + icons left (sticky), text right
+   SOCIAL LINKS
+   Icon row on index.qmd and about.qmd. Uses Bootstrap Icons,
+   Font Awesome and Academicons (loaded in _quarto.yml).
    ───────────────────────────────────────────────────────────── */
+/* Academicons' iNaturalist glyph is drawn smaller than the
+   others, so enlarge it and nudge it down to align with the row */
+.social-links .ai-inaturalist {
+  font-size: 1.3em;                 /* relative to the other icons */
+}
+
+/* Font Awesome's id-card-clip sits low in the row; nudge it up */
+.social-links .fa-id-card-clip {
+  vertical-align: 0.05em;           /* raise slightly; increase to lift more */
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   ABOUT PAGE
+   Two columns: photo + icons on the left (sticky), text on the
+   right. Stacks into one column on small screens.
+   ───────────────────────────────────────────────────────────── */
+/* Centre icons inside square link buttons (leftover from the
+   original about-page template; harmless if unused) */
 .about-link i {
   display: flex;
   align-items: center;
@@ -151,15 +182,15 @@ main.content {
 .about-page {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 2rem;                        /* space between photo and text columns */
   margin-bottom: 2rem;
 }
 
 .about-page .about-photo {
-  flex-shrink: 0;
+  flex-shrink: 0;                   /* keep the photo column at full width */
   text-align: center;
-  position: sticky;   /* photo + icons stay in view while scrolling */
-  top: 80px;          /* space below the navbar; adjust as needed */
+  position: sticky;                 /* photo + icons stay in view while scrolling */
+  top: 80px;                        /* distance below the navbar when stuck */
   align-self: flex-start;
 }
 
@@ -168,6 +199,7 @@ main.content {
   border-radius: 8px;
 }
 
+/* Name heading ("Andres Romero Bravo") */
 .about-page .about-text .name-title {
   margin-top: 0;
   margin-bottom: 17px;
@@ -176,32 +208,36 @@ main.content {
   line-height: 1.2;
 }
 
+/* Role line under the name ("Plant evolutionary ecologist") */
 .about-page .subtitle {
   color: gray;
   font-size: 1.1rem;
-  margin-top: -0.5rem;
+  margin-top: -0.5rem;              /* pull closer to the name */
   margin-bottom: 1rem;
 }
 
+/* Icon size and spacing on the about page */
 .about-page .social-links a {
   font-size: 1.5rem;
   margin-right: 0.5rem;
-  color: inherit;
+  color: inherit;                   /* use text colour, not link blue */
 }
 
-/* Stack layout and disable sticky on small screens */
+/* Small screens: stack columns and turn off sticky photo */
 @media (max-width: 768px) {
   .about-page { flex-direction: column; }
   .about-page .about-photo { position: static; }
 }
 
+
 /* ─────────────────────────────────────────────────────────────
-   RESEARCH PAGE — intro image + mini carousels (Slick)
+   RESEARCH PAGE
+   Intro image plus small Slick carousels per research topic.
    ───────────────────────────────────────────────────────────── */
 .intro-img {
   width: 100%;
   border-radius: 8px;
-  cursor: pointer;            /* opens the lightbox */
+  cursor: pointer;                  /* clickable: opens the lightbox */
 }
 
 .mini-carousel {
@@ -210,24 +246,28 @@ main.content {
 
 .mini-carousel img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;          /* fills the fixed height without distortion */
+  height: 250px;                    /* uniform slide height */
+  object-fit: cover;                /* fill the height without distortion */
   border-radius: 8px;
-  cursor: pointer;            /* opens the lightbox */
-  opacity: 1 !important;      /* stops scroll-fade.js from hiding slides */
+  cursor: pointer;                  /* clickable: opens the lightbox */
+  opacity: 1 !important;            /* stop scroll-fade.js hiding slides */
   transform: none !important;
 }
 
 .mini-carousel .slick-dots {
-  position: static;           /* dots sit below the images, not over the text */
+  position: static;                 /* dots below the images, not over the text */
   margin-top: 0.3rem;
 }
 
 .mini-carousel .slick-dots li button:before {
-  font-size: 8px;             /* smaller dots for the narrow column */
+  font-size: 8px;                   /* smaller dots for the narrow column */
 }
 
-/* ── Image credits ── */
+
+/* ─────────────────────────────────────────────────────────────
+   IMAGE CREDITS
+   Small grey photo credits under images and carousels.
+   ───────────────────────────────────────────────────────────── */
 .img-credit {
   font-size: 0.75rem;
   color: gray;
@@ -236,43 +276,47 @@ main.content {
 }
 
 .img-credit a {
-  color: inherit;
+  color: inherit;                   /* same grey as the credit text */
   text-decoration: underline;
 }
 
-/* stop scroll-fade.js from hiding credits inside carousels */
+/* Keep credits visible inside carousels (scroll-fade.js would hide them) */
 .mini-carousel .img-credit {
   opacity: 1 !important;
   transform: none !important;
 }
 
-/* ── Lightbox (fullscreen image on click) ── */
+
+/* ─────────────────────────────────────────────────────────────
+   LIGHTBOX
+   Fullscreen image viewer opened by clicking an image;
+   click anywhere to close.
+   ───────────────────────────────────────────────────────────── */
 .lightbox-overlay {
-  display: none;
+  display: none;                    /* hidden until an image is clicked */
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;                         /* cover the whole viewport */
   background: rgba(0, 0, 0, 0.9);
-  z-index: 9999;
+  z-index: 9999;                    /* above everything, including the navbar */
   cursor: pointer;
 }
 
 .lightbox-overlay img {
   max-width: 90%;
   max-height: 90vh;
-  object-fit: contain;
+  object-fit: contain;              /* show the whole image, no cropping */
   border-radius: 4px;
   display: block;
-  margin: auto;
-  margin-top: 5vh;
-  opacity: 1 !important;      /* stops scroll-fade.js from hiding it */
+  margin: 5vh auto 0;               /* centred horizontally, small top gap */
+  opacity: 1 !important;            /* stop scroll-fade.js hiding it */
   transform: none !important;
 }
 
+
 /* ─────────────────────────────────────────────────────────────
    CONTACT SECTION
+   Contact block added to the bottom of every page via
+   contact.html (include-after-body in _quarto.yml).
    ───────────────────────────────────────────────────────────── */
 .contact-section {
   margin-top: 3rem;

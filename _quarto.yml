@@ -14,7 +14,7 @@ website:
       - href: about.qmd
         text: About me
       - href: research.qmd
-        text: Research
+        text: My research
       - href: cv.qmd
         text: CV
       - href: publications.qmd
