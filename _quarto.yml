@@ -6,7 +6,7 @@ project:
 
 website:
   title: "Andrés Romero Bravo"
-  favicon: images/favicon.png
+  favicon: images/favicon_rounded.png
   navbar:
     left:
       - href: index.qmd
